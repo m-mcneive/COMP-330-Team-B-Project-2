@@ -9,18 +9,18 @@ public class Floor {
     private int numSpaces;
     private int level;
     private int size;
-    
+
     public Floor(int size, int level) {
     	this.size = size;
     	rooms = new Room[size];
     	numSpaces = 0;
     	this.level = level;
     }
-    
+
 	public static void readFloorPlan() throws IOException{
-		
+
 	}
-	
+
 	public void addRoom(Room r) {
 		if(numSpaces < size) {
 			rooms[numSpaces] = r;
@@ -33,10 +33,10 @@ public class Floor {
 		roomChange = new ArrayList<Room>(Arrays.asList(rooms));
 		roomChange.remove(index);
 		roomChange.toArray(rooms);
-		
+
 		}
 	}
 	*/
-	
-	
+
+
 }
