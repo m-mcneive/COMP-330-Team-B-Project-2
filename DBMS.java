@@ -27,7 +27,7 @@ public class DBMS {
               Connection connection = DriverManager.getConnection(host, username, password);
 
               Statement stmt = connection.createStatement();
-              String query = "SELECT * FROM database";
+              String query = "SELECT * FROM faculty";
               ResultSet rs = stmt.executeQuery(query);
 
               while (rs.next()) {
