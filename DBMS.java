@@ -41,6 +41,6 @@ public class DBMS {
           } catch (SQLException err) {
               System.out.println(err.getMessage());
           }
-        //}du
+        //}
     }
 }
