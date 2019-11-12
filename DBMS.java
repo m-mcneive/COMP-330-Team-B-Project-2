@@ -39,7 +39,6 @@ public class DBMS {
                 //setConnection(last_name, default_room, room, status);
               }
           } catch (SQLException err) {
-            System.out.println("Here");
               System.out.println(err.getMessage());
           }
         //}du
