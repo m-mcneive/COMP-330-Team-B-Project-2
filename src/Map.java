@@ -1,5 +1,12 @@
 import java.util.*;
 import java.io.*;
+import java.awt.image.BufferedImage;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.event.*;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 public class Map {
 static Floor[] building = new Floor[4]; //ie Doyle would have levels equal to 4;

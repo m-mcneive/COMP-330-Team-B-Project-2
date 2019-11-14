@@ -14,7 +14,7 @@ public class Floor  {
     private int numSpaces; //array Room[] size current count
     private int level;  // floor level
     private int size;   //number of rooms 
-    FloorLayout number = new FloorLayout();
+    FloorLayout number = new FloorLayout(); 
    
     
     public Floor(int size, int level) {
@@ -57,6 +57,7 @@ public class Floor  {
     		number.editFloorPlan(statusChanger, this); // should update the map of the floor based on each room's status	
     	}
     	number.printFloorPlan(this);
+    	
     }
     
 	
