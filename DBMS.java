@@ -37,7 +37,7 @@ public class DBMS {
               String query = "SELECT * FROM faculty";
               ResultSet rs = stmt.executeQuery(query);
 
-              //Reads all info from table made in query
+              //Reads all info from table made in query 
               while (rs.next()) {
                 String last_name = rs.getString("Name");
                 int room = rs.getInt("Room_Num");
