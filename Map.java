@@ -9,6 +9,6 @@ public static void main(String args[]){
 	Floor third = new Floor(15,3);
 	building[0] = second;
 	building[1] = third;
-	
+
 }
 }

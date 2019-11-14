@@ -20,12 +20,18 @@ public class DBMS {
 
           try {
 
-              String host = "instpubs.sql";
+              //Class.forName("com.mysql.jdbc.DoyleHall");
+              String host = "jdbc:mysql://localhost:3306/DoyleHall";
               String username = "root";
-              String password = "root";
+              String password = "GroupB171110";
+
 
               Connection connection = DriverManager.getConnection(host, username, password);
+              System.out.println("Database connected!");
 
+              /*
+              Connection connection = DriverManager.getConnection(host, username, password);
+              //System.out.println("Here1");
               Statement stmt = connection.createStatement();
               String query = "SELECT * FROM faculty";
               ResultSet rs = stmt.executeQuery(query);
@@ -35,9 +41,16 @@ public class DBMS {
                 int default_room = rs.getInt("Default_room");
                 int room = rs.getInt("Room");
                 int status = rs.getInt("Status");
-
+*/
                 //setConnection(last_name, default_room, room, status);
-              }
+                /*
+
+                MysqlDataSource dataSource = new MysqlDataSource();
+                dataSource.setUser("root");
+                dataSource.setPassword("GroupB171110");
+                dataSource.setServerName("jdbc:mysql://localhost/DoyleHall");*/
+              //}
+
           } catch (SQLException err) {
               System.out.println(err.getMessage());
           }
