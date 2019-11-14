@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 
 public class DBMS {
@@ -21,13 +21,26 @@ public class DBMS {
           try {
 
               //Class.forName("com.mysql.jdbc.DoyleHall");
-              String host = "jdbc:mysql://localhost:3306/DoyleHall";
+              String host = "jdbc:mysql://localhost/DoyleHall";
               String username = "root";
               String password = "GroupB171110";
 
 
               Connection connection = DriverManager.getConnection(host, username, password);
               System.out.println("Database connected!");
+              
+              Statement stmt = connection.createStatement();
+              String query = "SELECT * FROM faculty";
+              ResultSet rs = stmt.executeQuery(query);
+
+              
+              while (rs.next()) {
+                String last_name = rs.getString("Name");
+                //int default_room = rs.getInt("Default_room");
+                int room = rs.getInt("Room_Num");
+                String status = rs.getString("Room_Status");
+                System.out.println(last_name);
+              }
 
               /*
               Connection connection = DriverManager.getConnection(host, username, password);
@@ -52,7 +65,7 @@ public class DBMS {
               //}
 
           } catch (SQLException err) {
-              System.out.println(err.getMessage());
+              //System.out.println(err.getMessage());
           }
         //}
     }
