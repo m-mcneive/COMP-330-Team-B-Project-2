@@ -13,12 +13,12 @@ public class DBMS {
     	System.out.println("Starting");
     	
     	//Currently runs every -- 5 seconds
-        try {
-            Thread.sleep(5000);
+        /*try {
+            Thread.sleep(1000);
         } catch(InterruptedException ex) {
 
             Thread.currentThread().interrupt();
-        }
+        }*/
 
           try {
 
@@ -29,16 +29,18 @@ public class DBMS {
               
 
               Connection connection = DriverManager.getConnection(host, username, password);
-              System.out.println("Database connected!\n");
+              System.out.println("Database covh cehjnnected!\n");
               
               //SQL query
               Statement stmt = connection.createStatement();
               //Current table -- faculty
               String query = "SELECT * FROM faculty";
               ResultSet rs = stmt.executeQuery(query);
+              System.out.println(rs);
 
               //Reads all info from table made in query 
               while (rs.next()) {
+            	
                 String last_name = rs.getString("Name");
                 int room = rs.getInt("Room_Num");
                 String status = rs.getString("Room_Status");
