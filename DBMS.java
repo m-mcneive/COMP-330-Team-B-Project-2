@@ -5,14 +5,16 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 
 public class DBMS {
     public static void main(String[] args) {
-      //while (true) {
+    	System.out.println("Starting");
+    	
+    	//Currently runs every -- 5 seconds
         try {
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         } catch(InterruptedException ex) {
 
             Thread.currentThread().interrupt();
@@ -20,40 +22,33 @@ public class DBMS {
 
           try {
 
-              //Class.forName("com.mysql.jdbc.DoyleHall");
-              String host = "jdbc:mysql://localhost:3306/DoyleHall";
-              String username = "root";
-              String password = "GroupB171110";
-
+        	  //Connection info for databse
+              String host = "jdbc:mysql://localhost/DoyleHall";	//host address
+              String username = "root";	//username - local host
+              String password = "GroupB171110";	//password
+              
 
               Connection connection = DriverManager.getConnection(host, username, password);
-              System.out.println("Database connected!");
-
-              /*
-              Connection connection = DriverManager.getConnection(host, username, password);
-              //System.out.println("Here1");
+              System.out.println("Database connected!\n");
+              
+              //SQL query
               Statement stmt = connection.createStatement();
+              //Current table -- faculty
               String query = "SELECT * FROM faculty";
               ResultSet rs = stmt.executeQuery(query);
 
+              //Reads all info from table made in query 
               while (rs.next()) {
-                String last_name = rs.getString("Last_Name");
-                int default_room = rs.getInt("Default_room");
-                int room = rs.getInt("Room");
-                int status = rs.getInt("Status");
-*/
-                //setConnection(last_name, default_room, room, status);
-                /*
+                String last_name = rs.getString("Name");
+                int room = rs.getInt("Room_Num");
+                String status = rs.getString("Room_Status");
+                System.out.println(last_name + " " + room + " " + status);
+              }
 
-                MysqlDataSource dataSource = new MysqlDataSource();
-                dataSource.setUser("root");
-                dataSource.setPassword("GroupB171110");
-                dataSource.setServerName("jdbc:mysql://localhost/DoyleHall");*/
-              //}
+
 
           } catch (SQLException err) {
               System.out.println(err.getMessage());
           }
-        //}
-    }
+      }
 }
