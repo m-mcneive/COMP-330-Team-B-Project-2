@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class Room {
-private int roomNum,xPos,yPos, status;
-private String currentProf;
+public int roomNum,xPos,yPos, status;
+public String currentProf;
 
 public Room(){
 	roomNum = 0;

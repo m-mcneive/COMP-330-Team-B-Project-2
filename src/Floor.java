@@ -9,11 +9,11 @@ import javax.swing.*;
 
 
 public class Floor  {
-    private Room[] rooms;
+    public Room[] rooms;
    // private ArrayList<Room> roomChange;
-    private int numSpaces; //array Room[] size current count
-    private int level;  // floor level
-    private int size;   //number of rooms 
+    public int numSpaces; //array Room[] size current count
+    public int level;  // floor level
+    public int size;   //number of rooms 
     FloorLayout number = new FloorLayout(); 
    
     
