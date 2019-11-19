@@ -15,6 +15,15 @@ public class Floor {
     	rooms = new Room[size];
     	numSpaces = 0;
     	this.level = level;
+    	createEmptyRooms();
+    }
+    
+    public void createEmptyRooms() {
+
+    	for (int i = 0; i < size; i++) {
+    		rooms[i] = new Room(0, 0, 0, 0, " ");
+    		numSpaces ++;
+    	}
     }
 
 	public static void readFloorPlan() throws IOException{
@@ -26,6 +35,10 @@ public class Floor {
 			rooms[numSpaces] = r;
 			numSpaces++;
 		}
+	}
+	
+	public Room getRoom(int roomNum) {
+		return rooms[roomNum - 1];
 	}
 	/*
 	public void removeRoom(Room r, int index) {
