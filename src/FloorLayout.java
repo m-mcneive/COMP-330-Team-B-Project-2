@@ -57,7 +57,7 @@ public class FloorLayout {
 				twoMapFloor.fillRect(roomX, roomY, 20, 20);
 				break;
 			}
-			twoMapFloor.dispose();	
+			
 		}
 		if(f.getLevel() == 3) {
 			threeMapFloor.setColor(Color.BLACK);
@@ -80,8 +80,9 @@ public class FloorLayout {
 				threeMapFloor.fillRect(roomX, roomY, 20, 20);
 				break;
 			}
-			threeMapFloor.dispose();
+			
 		}
+	
 		System.out.println("Done drawing");
 	}
 	
@@ -92,7 +93,7 @@ public class FloorLayout {
 	            protected void paintComponent(Graphics g) {
 	                super.paintComponent(g);
 	                if (floorLevel == 2) {
-	                twoFloor = sizeChange(twoFloor,twoFloor.getWidth(),twoFloor.getHeight(), 0.40,BufferedImage.TYPE_4BYTE_ABGR);
+	                twoFloor = sizeChange(twoFloor,twoFloor.getWidth(),twoFloor.getHeight(), 0.40,BufferedImage.TYPE_3BYTE_BGR);
 	                g.drawImage(twoFloor, 300, -100, null);
 	                try {
 						saveImage(2);
@@ -102,7 +103,7 @@ public class FloorLayout {
 					}
 	                }
 	                else if (floorLevel == 3) {
-	                	threeFloor = sizeChange(threeFloor,threeFloor.getWidth(),threeFloor.getHeight(), 0.40,BufferedImage.TYPE_4BYTE_ABGR);
+	                	threeFloor = sizeChange(threeFloor,threeFloor.getWidth(),threeFloor.getHeight(), 0.40,BufferedImage.TYPE_3BYTE_BGR);
 		                g.drawImage(threeFloor, 300, -100, null);
 	                try {
 						saveImage(3);
@@ -133,17 +134,21 @@ public class FloorLayout {
 	public void saveImage(int floorLevel) throws IOException {
 		if(floorLevel == 2) {
 		try {
-		ImageIO.write(twoFloor,"jpg", new File("D2F.jpg"));
+		ImageIO.write(twoFloor,"jpg", new File("Doyle2F.jpg"));
+		twoMapFloor.dispose();	
 		 }
 		catch (IOException e){
+			e.printStackTrace();
 			System.out.println("Error in saving buffered image for " + floorLevel);	
 		 }
 		}
 		else if (floorLevel == 3) {
 			try {
-			ImageIO.write(threeFloor,"jpg", new File("D3F.jpg"));	
+			ImageIO.write(threeFloor,"jpg", new File("Doyle3F.jpg"));
+			threeMapFloor.dispose();
 			}
 			catch (IOException e){
+				e.printStackTrace();
 				System.out.println("Error in saving buffered image for " + floorLevel);	
 			}
 		}
@@ -161,9 +166,11 @@ public class FloorLayout {
 	
 	
 	public static void main(String[] args) {
-		Floor test = new Floor(1,2);
+		Floor test = new Floor(2,2);
 		Room greenberg = new Room(216,1650,2600,1,"Greenberg");
 		test.addRoom(greenberg);
+		Room ye = new Room(210,1580,1130,2,"Ye");
+		test.addRoom(ye);
 		FloorLayout map = new FloorLayout();
 		try {
 			map.readFloorPlan(test.getLevel());
@@ -171,7 +178,9 @@ public class FloorLayout {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		map.editFloorPlan(ye, test);
 		map.editFloorPlan(greenberg, test); 
+		
 		map.displayFinalMap(test.getLevel()); 
 		
 	}
