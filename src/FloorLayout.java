@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.imageio.*;
 
 public class FloorLayout {
-	 String two = "C:\\Users\\Alexander\\git\\COMP-330Project-2\\src\\D2F.jpg";
+	 String two = "C:\\Users\\Alexander\\git\\COMP-330Project-2\\src\\D2F.jpg"; //* make sure to change this and the and three for the program to work
 	 String three ="C:\\Users\\Alexander\\git\\COMP-330Project-2\\src\\D3F.jpg";
 	 BufferedImage twoFloor,threeFloor;
 	 Graphics2D twoMapFloor,threeMapFloor;
@@ -135,7 +135,7 @@ public class FloorLayout {
 		if(floorLevel == 2) {
 		try {
 		ImageIO.write(twoFloor,"jpg", new File("Doyle2F.jpg"));
-		twoMapFloor.dispose();	
+		twoMapFloor.dispose(); 	
 		 }
 		catch (IOException e){
 			e.printStackTrace();
@@ -145,7 +145,7 @@ public class FloorLayout {
 		else if (floorLevel == 3) {
 			try {
 			ImageIO.write(threeFloor,"jpg", new File("Doyle3F.jpg"));
-			threeMapFloor.dispose();
+			threeMapFloor.dispose(); 
 			}
 			catch (IOException e){
 				e.printStackTrace();
@@ -166,11 +166,13 @@ public class FloorLayout {
 	
 	
 	public static void main(String[] args) {
-		Floor test = new Floor(2,2);
+		Floor test = new Floor(3,2);
 		Room greenberg = new Room(216,1650,2600,1,"Greenberg");
 		test.addRoom(greenberg);
 		Room ye = new Room(210,1580,1130,2,"Ye");
 		test.addRoom(ye);
+		Room yacobellis = new Room(210,1030,1100,3,"Yacobellis");
+		test.addRoom(yacobellis);
 		FloorLayout map = new FloorLayout();
 		try {
 			map.readFloorPlan(test.getLevel());
@@ -180,7 +182,7 @@ public class FloorLayout {
 		}
 		map.editFloorPlan(ye, test);
 		map.editFloorPlan(greenberg, test); 
-		
+		map.editFloorPlan(yacobellis, test);
 		map.displayFinalMap(test.getLevel()); 
 		
 	}
