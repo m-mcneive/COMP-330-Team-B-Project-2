@@ -42,10 +42,13 @@ public class DBMS {
               //Reads all info from table made in query 
               while (rs.next()) {
                 String last_name = rs.getString("Name");
-                int room = rs.getInt("Room_Num");
+                String room = rs.getString("Room_Num");
+                String floor = rs.getString("Room_Floor");
                 String status = rs.getString("Room_Status");
                 System.out.println(last_name + " " + room + " " + status);
-                map.setConnection(last_name, room, status);
+                int r = Integer.parseInt(room);
+                int f = Integer.parseInt(floor);
+                map.setConnection(last_name, r + 1, status, f);
               }
 
 
