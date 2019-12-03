@@ -59,7 +59,9 @@ CREATE TABLE `faculty` (
 
 LOCK TABLES `faculty` WRITE;
 /*!40000 ALTER TABLE `faculty` DISABLE KEYS */;
-INSERT INTO `faculty` VALUES ('Andrew N. Harrington',1,'out'),('Catherine Putonti',0,'out'),('Chandra N. Sekharan',0,'out'),('Channah Naiman',0,'out'),('Dmitriy Dligach',0,'out'),('Eric Chan-Tin',0,'out'),('George K. Thiruvathukal',0,'out'),('Heather E. Wheeler',0,'out'),('Konstantin Läufer',0,'out'),('Neil Klingensmith',0,'out'),('Nicholas J. Hayward',0,'out'),('Peter Lars Dordal',0,'out'),('Robert Yacobellis',0,'out'),('Ronald I. Greenberg',0,'out'),('Stephen Doty',0,'out'),('William L. Honig',0,'out');
+INSERT INTO `faculty` VALUES ('Andrew N. Harrington',1,'out'),('Catherine Putonti',100,'out'),('Chandra N. Sekharan',0,'out'),('Channah Naiman',0,'out'),('Dmitriy Dligach',0,'out'),('Eric Chan-Tin',0,'out'),('George K. Thiruvathukal',0,'out'),
+('Heather E. Wheeler',0,'out'),('Konstantin Läufer',0,'out'),('Neil Klingensmith',0,'out'),('Nicholas J. Hayward',0,'out'),('Peter Lars Dordal',0,'out'),('Robert Yacobellis',0,'out'),('Ronald I. Greenberg',0,'out'),('Stephen Doty',0,'out'),
+('William L. Honig',0,'out');
 /*!40000 ALTER TABLE `faculty` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

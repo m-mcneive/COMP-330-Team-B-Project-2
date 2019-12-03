@@ -10,10 +10,15 @@ import java.sql.Statement;
 
 public class DBMS {
     public static void main(String[] args) {
+    	Map map = new Map(15);
     	System.out.println("Starting");
     	
     	//Currently runs every -- 5 seconds
+<<<<<<< HEAD
         /*try {
+=======
+        try {
+>>>>>>> matt
             Thread.sleep(1000);
         } catch(InterruptedException ex) {
 
@@ -36,15 +41,23 @@ public class DBMS {
               //Current table -- faculty
               String query = "SELECT * FROM faculty";
               ResultSet rs = stmt.executeQuery(query);
+<<<<<<< HEAD
               System.out.println(rs);
+=======
+              
+>>>>>>> matt
 
               //Reads all info from table made in query 
               while (rs.next()) {
             	
                 String last_name = rs.getString("Name");
-                int room = rs.getInt("Room_Num");
+                String room = rs.getString("Room_Num");
+                String floor = rs.getString("Room_Floor");
                 String status = rs.getString("Room_Status");
                 System.out.println(last_name + " " + room + " " + status);
+                int r = Integer.parseInt(room);
+                int f = Integer.parseInt(floor);
+                map.setConnection(last_name, r + 1, status, f);
               }
 
 
