@@ -9,47 +9,30 @@ import java.sql.Statement;
 
 
 public class DBMS {
+    Map map = new Map(15);
     public static void main(String[] args) {
-    	Map map = new Map(15);
     	System.out.println("Starting");
-    	
-    	//Currently runs every -- 5 seconds
-<<<<<<< HEAD
-        /*try {
-=======
-        try {
->>>>>>> matt
-            Thread.sleep(1000);
-        } catch(InterruptedException ex) {
-
-            Thread.currentThread().interrupt();
-        }*/
-
           try {
 
         	  //Connection info for databse
               String host = "jdbc:mysql://localhost/DoyleHall";	//host address
               String username = "root";	//username - local host
               String password = "GroupB171110";	//password
-              
+
 
               Connection connection = DriverManager.getConnection(host, username, password);
               System.out.println("Database covh cehjnnected!\n");
-              
+
               //SQL query
               Statement stmt = connection.createStatement();
               //Current table -- faculty
               String query = "SELECT * FROM faculty";
               ResultSet rs = stmt.executeQuery(query);
-<<<<<<< HEAD
-              System.out.println(rs);
-=======
-              
->>>>>>> matt
 
-              //Reads all info from table made in query 
+
+              //Reads all info from table made in query
               while (rs.next()) {
-            	
+
                 String last_name = rs.getString("Name");
                 String room = rs.getString("Room_Num");
                 String floor = rs.getString("Room_Floor");
