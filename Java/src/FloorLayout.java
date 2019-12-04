@@ -12,8 +12,8 @@ import javax.swing.event.ChangeListener;
 import javax.imageio.*;
 
 public class FloorLayout {
-	 String two = "C:\\Users\\Alexander\\git\\COMP-330Project-2\\src\\DOYLE-2nd-Floor.png"; //* make sure to change this and the and three for the program to work
-	 String three ="C:\\Users\\Alexander\\git\\COMP-330Project-2\\src\\DOYLE-3rd-Floor.png";
+	 String two = "DOYLE-2nd-Floor.png"; //* make sure to change this and the and three for the program to work
+	 String three ="DOYLE-3rd-Floor.png";
 	 BufferedImage twoFloor,threeFloor;
 	 Graphics2D twoMapFloor,threeMapFloor;
 
@@ -300,6 +300,7 @@ public class FloorLayout {
 	}
 	
 	public static void main(String[] args) {
+		/*
 		Floor test = new Floor(3,2);
 		Room greenberg = new Room(216,1650,2600,1,"Greenberg");
 		test.addRoom(greenberg);
@@ -318,7 +319,21 @@ public class FloorLayout {
 		map.editFloorPlan(greenberg, test); 
 		map.editFloorPlan(yacobellis, test);
 		map.displayFinalMap(test.getLevel()); 
+		*/
+		Floor test2 = new Floor(1,3);
+		Room Honig = new Room(316,2000,2000,2,"Honig");
+		test2.addRoom(Honig);
 		
+		FloorLayout map2 = new FloorLayout();
+		try {
+			map2.readFloorPlan(test2.getLevel());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+		map2.editFloorPlan(Honig, test2);
+		map2.displayFinalMap(test2.getLevel());
 	}
 	
 }
