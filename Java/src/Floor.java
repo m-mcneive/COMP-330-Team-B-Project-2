@@ -44,6 +44,10 @@ public class Floor  {
     public int getLevel() {
     	return level;
     }
+
+    public Room getRoon(int n) {
+        return rooms[n - 1];
+    }
     
   
 	
