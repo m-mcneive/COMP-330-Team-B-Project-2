@@ -35,7 +35,7 @@ public class Floor {
         return level;
     }
 
-    public Room getRoon(int n) {
+    public Room getRoom(int n) {
         return rooms[n - 1];
     }
 
