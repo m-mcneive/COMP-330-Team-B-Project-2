@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class DBMS {
     public static void main(String[] args) {
-        Map map = new Map();
+        Map map = new Map(15);
         System.out.println("Starting");
         try {
 
