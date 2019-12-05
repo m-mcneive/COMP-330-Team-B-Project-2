@@ -1,16 +1,11 @@
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.ResultSet;
-import java.sql.Statement;
-//import java.util.Map;
+import java.sql.*;
 
 //import java.util.concurrent.TimeUnit;
 
+
 public class DBMS {
     public static void main(String[] args) {
-        Map map = new Map(15);
+        Map map = new Map();
         System.out.println("Starting");
         try {
 
