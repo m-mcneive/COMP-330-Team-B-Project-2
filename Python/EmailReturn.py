@@ -6,7 +6,7 @@ def send_email(email_data, code):
     server.starttls()
     server.ehlo()
 
-    server.login('dgubala@luc.edu', 'Save_load0727')
+    server.login('doyle_hall@outlook.com', 'PiMap123')
     # codes will come in as a number 0-4
     # 0 = NoRoomError
     # 1 = InvalidRoomNumberError

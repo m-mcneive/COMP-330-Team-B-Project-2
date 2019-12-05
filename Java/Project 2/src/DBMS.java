@@ -1,9 +1,4 @@
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 //import java.util.concurrent.TimeUnit;
 
@@ -15,9 +10,9 @@ public class DBMS {
         try {
 
             //Connection info for databse
-            String host = "jdbc:mysql://localhost/DoyleHall";	//host address
-            String username = "root";	//username - local host
-            String password = "GroupB171110";	//password
+            String host = "jdbc:mysql://localhost/DoyleHall";    //host address
+            String username = "root";    //username - local host
+            String password = "GroupB171110";    //password
 
 
             Connection connection = DriverManager.getConnection(host, username, password);
@@ -42,7 +37,6 @@ public class DBMS {
                 int f = Integer.parseInt(floor);
                 //map.setConnection(last_name, r + 1, status, f);
             }
-
 
 
         } catch (SQLException err) {

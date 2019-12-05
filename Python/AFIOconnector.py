@@ -8,8 +8,8 @@ def split_and_send(email_data):
     print list_data
     SQLupdater.mysql_update(list_data)
 
-ADAFRUIT_IO_USERNAME = "dgubala"
-ADAFRUIT_IO_KEY = "a65a0efced604e27b3f357e48aaa7210"
+ADAFRUIT_IO_USERNAME = "doylehall"
+ADAFRUIT_IO_KEY = "2dbfe71ae99245b7bfdf123242f3dce9"
 
 aio = Client(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
 
@@ -29,4 +29,3 @@ while True:
 
     if previous_data != data:
         split_and_send(data.value)
-
