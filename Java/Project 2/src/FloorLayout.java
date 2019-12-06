@@ -120,7 +120,7 @@ public class FloorLayout {
         }
 /*
         ImagePanel panel = new ImagePanel(floorLevel);  Code borrowed from https://coderanch.com/t/338284/java/zoom-zoom-picture-swing  to display image correctly
-        ImageZoom zoom = new ImageZoom(panel);    /* display image on screen *//
+        ImageZoom zoom = new ImageZoom(panel);    /* display image on screen */
  /*      JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.getContentPane().add(zoom.getUIPanel(), "North");
@@ -129,7 +129,7 @@ public class FloorLayout {
         f.setLocation(200,200);
         f.setVisible(true);
 */
-*/
+
 
 		/* beginning of original output
 		 JFrame frame = buildFrame();
