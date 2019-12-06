@@ -1,12 +1,11 @@
-import java.sql.*;
 import java.io.IOException;
+import java.sql.*;
 
 //import java.util.concurrent.TimeUnit;
 
-
 public class DBMS {
     public static void main(String[] args) throws IOException {
-        Map map = new Map(17);
+        Map map = new Map(19);
         FloorLayout fl = new FloorLayout();
         System.out.println("Starting");
         try {
@@ -18,7 +17,7 @@ public class DBMS {
 
 
             Connection connection = DriverManager.getConnection(host, username, password);
-            System.out.println("Database covh cehjnnected!\n");
+            System.out.println("Database connected!\n");
 
             //SQL query
             Statement stmt = connection.createStatement();
@@ -34,10 +33,15 @@ public class DBMS {
                 String room = rs.getString("Room_Num");
                 String floor = rs.getString("Room_Floor");
                 String status = rs.getString("Room_Status");
-                System.out.println(last_name + " " + room + " " + status);
+                System.out.println(last_name + " " + floor + "-" + room + " " + status);
                 int r = Integer.parseInt(room);
                 int f = Integer.parseInt(floor);
-                //map.setConnection(last_name, r + 1, status, f);
+                if (f == 3) {
+                	f  = 1;
+                } else {
+                	f = 0;
+                }
+                map.setConnection(last_name, r, status, f + 2);
             }
 
             Floor f2 = map.getFloor(2);
@@ -50,14 +54,14 @@ public class DBMS {
             }*/
 
             fl.readFloorPlan(3);
-            for (int i = 1; i < f3.rooms.length; i++) {
-                fl.editFloorPlan(f3.rooms[i - 1], f3);
+            for (int i = 1; i < f3.rooms.length - 1; i++) {
+                fl.editFloorPlan(f3.rooms[i], f3);
             }
-            f3.rooms[0].setStatus(2);
-            fl.editFloorPlan(f3.rooms[0], f3);
+            
 			
             fl.saveImage(3);
             fl.displayFinalMap(3);
+
 
         } catch (SQLException err) {
             System.out.println(err.getMessage());
