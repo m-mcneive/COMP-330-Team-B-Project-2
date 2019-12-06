@@ -12,6 +12,16 @@ public class Floor {
         rooms = new Room[size];
         numSpaces = 0;
         this.level = level;
+    	createEmptyRooms();
+    }
+
+    public void createEmptyRooms() {
+    	
+    	for (int i = 1; i < size; i++) {
+    		rooms[i] = new Room(i, 0, 0, 3, " ");
+    		System.out.println(rooms[i].getRoomNum());
+    		numSpaces ++;
+    	}
     }
 
     public void addRoom(Room r) {
@@ -36,7 +46,7 @@ public class Floor {
     }
 
     public Room getRoom(int n) {
-        return rooms[n - 1];
+        return rooms[n + 1];
     }
 
 
