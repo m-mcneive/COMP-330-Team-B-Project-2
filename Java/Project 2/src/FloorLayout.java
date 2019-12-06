@@ -119,15 +119,16 @@ public class FloorLayout {
             }
         }
 /*
-        ImagePanel panel = new ImagePanel(floorLevel); /* Code borrowed from https://coderanch.com/t/338284/java/zoom-zoom-picture-swing  to display image correctly*/
-        ImageZoom zoom = new ImageZoom(panel);    // display image on screen
-        JFrame f = new JFrame();
+        ImagePanel panel = new ImagePanel(floorLevel);  Code borrowed from https://coderanch.com/t/338284/java/zoom-zoom-picture-swing  to display image correctly
+        ImageZoom zoom = new ImageZoom(panel);    /* display image on screen *//
+ /*      JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.getContentPane().add(zoom.getUIPanel(), "North");
         f.getContentPane().add(new JScrollPane(panel));
         f.setSize(1000,1000);
         f.setLocation(200,200);
         f.setVisible(true);
+*/
 */
 
 		/* beginning of original output
