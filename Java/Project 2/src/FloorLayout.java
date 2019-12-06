@@ -14,6 +14,8 @@ public class FloorLayout {
     String three ="/Users/gubdev/IdeaProjects/Project 2/imgs/DOYLE-3rd-Floor.png";
     BufferedImage twoFloor,threeFloor;
     Graphics2D twoMapFloor,threeMapFloor;
+    int[][] floor3 = {{190, 625}, {0, 0}, {180, 520}, {190, 465}, {215, 390}, {210, 330}, {175, 245}, {235, 235}, {245, 235}, {405, 245}, {380, 330}, {370, 430}, {0, 0}, {405, 525}, {400, 585}, {380, 650}};
+
 
 
     public void readFloorPlan(int floorLevel) throws IOException {
