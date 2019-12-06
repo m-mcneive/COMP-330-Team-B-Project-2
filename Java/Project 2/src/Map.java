@@ -36,12 +36,18 @@ public class Map {
 		} else {
 			intStatus = 3;
 		}
-		
-		
+		System.out.println(floor);
+		System.out.println(building[floor - 2]);
 		building[floor - 2].getRoom(room).setStatus(intStatus);
 		building[floor - 2].getRoom(room).setCurrentProf(last_name);
-		
-		
+	}
+
+	public int getRoomStatus(int floor, int num) {
+		return building[floor - 2].getRoom(room).getStatus();
+	}
+
+	public Floor getFloor(int n){
+		return building[n - 2];
 	}
 
 
