@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+/*Make sure to change String two and String three to your desired file path for the program to work and also filename under loadImage() if you want to display it correctly beside saving the image. */
+
 public class FloorLayout {
     String two = "/Users/gubdev/Documents/GitHub/COMP-330-Team-B-Project-2/Java/Project 2/imgs/DOYLE-2nd-Floor.png"; //* make sure to change this and the and three for the program to work
     String three ="/Users/gubdev/Documents/GitHub/COMP-330-Team-B-Project-2/Java//Project 2/imgs/DOYLE-3rd-Floor.png";
