@@ -10,12 +10,13 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 public class FloorLayout {
-    String two = "/Users/gubdev/IdeaProjects/Project 2/imgs/DOYLE-2nd-Floor.png"; //* make sure to change this and the and three for the program to work
-    String three ="/Users/gubdev/IdeaProjects/Project 2/imgs/DOYLE-3rd-Floor.png";
+    String two = "/Users/mattmcneive/Desktop/Project2/Java/Project 2/imgs/DOYLE-2nd-Floor.png"; //* make sure to change this and the and three for the program to work
+    String three ="/Users/mattmcneive/Desktop/Project2/Java/Project 2/imgs/DOYLE-3rd-Floor.png";
     BufferedImage twoFloor,threeFloor;
     Graphics2D twoMapFloor,threeMapFloor;
-    int[][] floor3 = {{190, 625}, {0, 0}, {180, 520}, {190, 465}, {215, 390}, {210, 330}, {175, 245}, {235, 235}, {245, 235}, {405, 245}, {380, 330}, {370, 430}, {0, 0}, {405, 525}, {400, 585}, {380, 650}};
-    int[][] floor2 = {{200,610}, {0, 0}, {0, 0}, {0, 0}, {230,395}, {220,330} /*206*/, {200,260} /*207*/,{248,246} /*208*/, {340,250} /*209*/, {410,250}, {377,341}, {380,400}, {383,454}, {400,550}, {0, 0}, {390, 628} /*216*/ };
+
+    int[][] floor3 = {{0, 0}, {190, 625}, {0, 0}, {180, 520}, {190, 465}, {215, 390}, {210, 330}, {175, 245}, {235, 235}, {345, 235}, {405, 245}, {380, 330}, {370, 430}, {0, 0}, {405, 525}, {400, 585}, {380, 650}};
+    int[][] floor2 = {{0, 0}, {200,610}, {0, 0}, {0, 0}, {0, 0}, {230,395}, {220,330} /*206*/, {200,260} /*207*/,{248,246} /*208*/, {340,250} /*209*/, {410,250}, {377,341}, {380,400}, {383,454}, {400,550}, {0, 0}, {390, 628} /*216*/ };
 
 
     public void readFloorPlan(int floorLevel) throws IOException {
@@ -37,29 +38,37 @@ public class FloorLayout {
     }
 
     public void editFloorPlan(Room r, Floor f) {
-        int roomX = r.getXPos();
-        int roomY = r.getYPos();
+        int roomX = 100;
+        int roomY = 100;
+        int pixelSize = 10;
+        if (f.getLevel() == 2) {
+        	//roomX = floor2[r - 1][0];
+        	//roomY = floor2[r - 1][1];
+        } else {
+        	roomX = floor3[r.getRoomNum() - 1][0];
+        	roomY = floor3[r.getRoomNum() - 1][1];
+        }
         int status = r.getStatus();
         //draw rectangles on image to denote status
         if(f.getLevel() == 2) {
             twoMapFloor.setColor(Color.BLACK);
             switch(status) {
                 case 1:  //1 = Open = green
-                    twoMapFloor.drawRect(roomX, roomY, 20, 20);
+                    twoMapFloor.drawRect(roomX, roomY, pixelSize, pixelSize);
                     twoMapFloor.setColor(Color.GREEN);
-                    twoMapFloor.fillRect(roomX, roomY, 20, 20);
+                    twoMapFloor.fillRect(roomX, roomY, pixelSize, pixelSize);
                     break;
 
                 case 2:  //2 = Occupied/With Student but in building = yellow
-                    twoMapFloor.drawRect(roomX, roomY, 20, 20);
+                    twoMapFloor.drawRect(roomX, roomY, pixelSize, pixelSize);
                     twoMapFloor.setColor(Color.YELLOW);
-                    twoMapFloor.fillRect(roomX, roomY, 20, 20);
+                    twoMapFloor.fillRect(roomX, roomY, pixelSize, pixelSize);
                     break;
 
                 case 3:  //3 = Closed/now in building = red
-                    twoMapFloor.drawRect(roomX, roomY, 20, 20);
+                    twoMapFloor.drawRect(roomX, roomY, pixelSize, pixelSize);
                     twoMapFloor.setColor(Color.RED);
-                    twoMapFloor.fillRect(roomX, roomY, 20, 20);
+                    twoMapFloor.fillRect(roomX, roomY, pixelSize, pixelSize);
                     break;
             }
 
@@ -68,21 +77,22 @@ public class FloorLayout {
             threeMapFloor.setColor(Color.BLACK);
             switch(status) {
                 case 1:  //1 = Open = green
-                    threeMapFloor.drawRect(roomX, roomY, 20, 20);
+                    threeMapFloor.drawRect(roomX, roomY, pixelSize, pixelSize);
                     threeMapFloor.setColor(Color.GREEN);
-                    threeMapFloor.fillRect(roomX, roomY, 20, 20);
+                    threeMapFloor.fillRect(roomX, roomY, pixelSize, pixelSize);
                     break;
 
                 case 2:  //2 = Occupied/With Student but in building = yellow
-                    threeMapFloor.drawRect(roomX, roomY, 20, 20);
+                    threeMapFloor.drawRect(roomX, roomY, pixelSize, pixelSize);
                     threeMapFloor.setColor(Color.YELLOW);
-                    threeMapFloor.fillRect(roomX, roomY, 20, 20);
+                    threeMapFloor.fillRect(roomX, roomY, pixelSize, pixelSize);
                     break;
 
                 case 3:  //3 = Closed/now in building = red
-                    threeMapFloor.drawRect(roomX, roomY, 20, 20);
+                	System.out.println(roomX + " " + roomY);
+                    threeMapFloor.drawRect(roomX, roomY, pixelSize, pixelSize);
                     threeMapFloor.setColor(Color.RED);
-                    threeMapFloor.fillRect(roomX, roomY, 20, 20);
+                    threeMapFloor.fillRect(roomX, roomY, pixelSize, pixelSize);
                     break;
             }
 
@@ -118,8 +128,8 @@ public class FloorLayout {
         f.setSize(1000,1000);
         f.setLocation(200,200);
         f.setVisible(true);
-    
-		
+
+
 		/* beginning of original output
 		 JFrame frame = buildFrame();
 		 JPanel pane = new JPanel() {
@@ -148,16 +158,16 @@ public class FloorLayout {
 	                }
 	            }
 
-				
+
 	        };
-	        JScrollPane scrollBar=new JScrollPane(pane,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);  
-	        
+	        JScrollPane scrollBar=new JScrollPane(pane,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
 	        frame.add(scrollBar);
-	       
+
 	        frame.setVisible(true);
 	        */
     }
-	
+
 	  /*
 	private JFrame buildFrame() {
         JFrame frame = new JFrame();
@@ -208,7 +218,7 @@ public class FloorLayout {
         public ImagePanel(int i)
         {
             loadImage(i);
-            scale = 0.48;
+            scale = 1;
             setBackground(Color.black);
         }
 
@@ -250,10 +260,10 @@ public class FloorLayout {
         {
             String fileName = null;
             if (fl == 2) {
-                fileName = "C:\\Users\\Alexander\\git\\COMP-330Project-2\\Doyle2F.png" ;
+                fileName = "/Users/mattmcneive/Desktop/Project2/Doyle2F.png" ;
             }
             else if(fl == 3) {
-                fileName = "C:\\Users\\Alexander\\git\\COMP-330Project-2\\Doyle3F.png";
+                fileName = "/Users/mattmcneive/Desktop/Project2/Doyle3F.png";
             }
             try
             {
@@ -298,7 +308,7 @@ public class FloorLayout {
             return panel;
         }
     }
-
+/*
     public static void main(String[] args) {
 		/*
 		Floor test = new Floor(3,2);
@@ -316,10 +326,10 @@ public class FloorLayout {
 			e.printStackTrace();
 		}
 		map.editFloorPlan(ye, test);
-		map.editFloorPlan(greenberg, test); 
+		map.editFloorPlan(greenberg, test);
 		map.editFloorPlan(yacobellis, test);
-		map.displayFinalMap(test.getLevel()); 
-		*/
+		map.displayFinalMap(test.getLevel());
+		*
         Floor test2 = new Floor(1,3);
         Room Honig = new Room(316,2000,2000,2,"Honig");
         test2.addRoom(Honig);
@@ -334,6 +344,6 @@ public class FloorLayout {
 
         map2.editFloorPlan(Honig, test2);
         map2.displayFinalMap(test2.getLevel());
-    }
+    }*/
 
 }
