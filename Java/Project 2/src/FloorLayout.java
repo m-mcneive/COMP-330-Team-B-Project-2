@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 public class FloorLayout {
-    String two = "/Users/mattmcneive/Desktop/Project2/Java/Project 2/imgs/DOYLE-2nd-Floor.png"; //* make sure to change this and the and three for the program to work
-    String three ="/Users/mattmcneive/Desktop/Project2/Java/Project 2/imgs/DOYLE-3rd-Floor.png";
+    String two = "/Users/gubdev/Documents/GitHub/COMP-330-Team-B-Project-2/Java/Project 2/imgs/DOYLE-2nd-Floor.png"; //* make sure to change this and the and three for the program to work
+    String three ="/Users/gubdev/Documents/GitHub/COMP-330-Team-B-Project-2/Java//Project 2/imgs/DOYLE-3rd-Floor.png";
     BufferedImage twoFloor,threeFloor;
     Graphics2D twoMapFloor,threeMapFloor;
 
@@ -42,8 +42,9 @@ public class FloorLayout {
         int roomY = 100;
         int pixelSize = 10;
         if (f.getLevel() == 2) {
-        	//roomX = floor2[r - 1][0];
-        	//roomY = floor2[r - 1][1];
+            System.out.println(r.getRoomNum() - 1);
+            roomX = floor2[r.getRoomNum() - 1][0];
+            roomY = floor2[r.getRoomNum() - 1][1];
         } else {
         	roomX = floor3[r.getRoomNum() - 1][0];
         	roomY = floor3[r.getRoomNum() - 1][1];
@@ -118,17 +119,16 @@ public class FloorLayout {
                 e.printStackTrace();
             }
         }
-/*
-        ImagePanel panel = new ImagePanel(floorLevel);  Code borrowed from https://coderanch.com/t/338284/java/zoom-zoom-picture-swing  to display image correctly
-        ImageZoom zoom = new ImageZoom(panel);    /* display image on screen */
- /*      JFrame f = new JFrame();
+
+        ImagePanel panel = new ImagePanel(floorLevel); /* Code borrowed from https://coderanch.com/t/338284/java/zoom-zoom-picture-swing  to display image correctly*/
+        ImageZoom zoom = new ImageZoom(panel);    // display image on screen
+        JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.getContentPane().add(zoom.getUIPanel(), "North");
         f.getContentPane().add(new JScrollPane(panel));
         f.setSize(1000,1000);
         f.setLocation(200,200);
         f.setVisible(true);
-*/
 
 
 		/* beginning of original output
@@ -261,10 +261,10 @@ public class FloorLayout {
         {
             String fileName = null;
             if (fl == 2) {
-                fileName = "/Users/mattmcneive/Desktop/Project2/Doyle2F.png" ;
+                fileName = "/Users/gubdev/Desktop/Project2/Doyle2F.png" ;
             }
             else if(fl == 3) {
-                fileName = "/Users/mattmcneive/Desktop/Project2/Doyle3F.png";
+                fileName = "/Users/gubdev/Desktop/Project2/Doyle3F.png";
             }
             try
             {
