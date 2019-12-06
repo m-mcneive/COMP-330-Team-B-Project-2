@@ -11,7 +11,7 @@ public class Room {
     }
 
     public Room(int roomNum, int xPos, int yPos, int status, String currentProf) {
-        roomNum = 0;
+        this.roomNum = roomNum;
         this.xPos = xPos;
         this.yPos = yPos;
         this.status = status;
