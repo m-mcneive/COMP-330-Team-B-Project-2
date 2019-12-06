@@ -4,8 +4,9 @@ import java.sql.*;
 
 
 public class DBMS {
-    public static void main(String[] args) {
-        Map map = new Map(15);
+    public static void main(String[] args) throws IOException {
+        Map map = new Map(17);
+        FloorLayout fl = new FloorLayout();
         System.out.println("Starting");
         try {
 
@@ -38,6 +39,24 @@ public class DBMS {
                 //map.setConnection(last_name, r + 1, status, f);
             }
 
+            Floor f2 = map.getFloor(2);
+            Floor f3 = map.getFloor(3);
+
+           
+
+            /*for (int i = 1; i < f2.rooms.length; i++) {
+                fl.editFloorPlan(f2.rooms[i - 1], f2);
+            }*/
+
+            fl.readFloorPlan(3);
+            for (int i = 1; i < f3.rooms.length; i++) {
+                fl.editFloorPlan(f3.rooms[i - 1], f3);
+            }
+            f3.rooms[0].setStatus(2);
+            fl.editFloorPlan(f3.rooms[0], f3);
+			
+            fl.saveImage(3);
+            fl.displayFinalMap(3);
 
         } catch (SQLException err) {
             System.out.println(err.getMessage());
