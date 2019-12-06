@@ -118,7 +118,7 @@ public class FloorLayout {
                 e.printStackTrace();
             }
         }
-
+/*
         ImagePanel panel = new ImagePanel(floorLevel); /* Code borrowed from https://coderanch.com/t/338284/java/zoom-zoom-picture-swing  to display image correctly*/
         ImageZoom zoom = new ImageZoom(panel);    // display image on screen
         JFrame f = new JFrame();
@@ -128,7 +128,7 @@ public class FloorLayout {
         f.setSize(1000,1000);
         f.setLocation(200,200);
         f.setVisible(true);
-
+*/
 
 		/* beginning of original output
 		 JFrame frame = buildFrame();
