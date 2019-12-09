@@ -14,10 +14,14 @@ The only issue was setting up an email to work with IFTTT as it only work with D
 The project was also scaled back to have the rapberry pi hooked up to a monitor that could display this information at Doyle or through a website instead
 of the student being able to access it on their phone
 
-Programs and chief creators
-Alex Chan-FloorLayout.java  - in collaboration with Matt
-Matt McNeive-DBMS.java
-David Gubala-AFIOConnector.py
-             EmailReturn.py - in collaboration with Matt
-             SQLupdater.py
-             Doyle Hall.sql
+Programs and chief creators:
+
+Alex Chan-FloorLayout.java-in collaboration with Matt.     
+
+Matt McNeive-DBMS.java.
+
+David Gubala
+AFIOConnector.py,
+EmailReturn.py - in collaboration with Matt,
+SQLupdater.py, and
+Doyle Hall.sql
